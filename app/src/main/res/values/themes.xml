@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Standard_assignment_4" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/free_speech_blue</item>
+    </style>
+
+    <style name="Theme.Standard_assignment_4" parent="Base.Theme.Standard_assignment_4" />
+</resources>
