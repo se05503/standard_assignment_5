@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="←"
         android:gravity="center"
+        android:text="←"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:text="Select a Card"
-        android:textStyle="bold"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_back"
         app:layout_constraintStart_toEndOf="@+id/btn_back"
         app:layout_constraintTop_toTopOf="@+id/btn_back" />
@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/nobel"
         android:text="Available Balance"
+        android:textColor="@color/nobel"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_back" />
 
@@ -47,21 +47,21 @@
         android:id="@+id/tv_title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$2,85,856.20"
-        android:textColor="@color/free_speech_blue"
-        android:textStyle="bold"
-        android:textSize="30sp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
+        android:text="$2,85,856.20"
+        android:textColor="@color/free_speech_blue"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title1"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_title1" />
 
     <TextView
         android:id="@+id/tv_title3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:text="Please, selet a card you are willing to do the money transfer with or add a new card using the plus button below"
         android:textColor="@color/nobel"
@@ -91,12 +91,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
-
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="24dp"/>
+<!--    android:layout_height="400dp" 이거에 따라 해당 레이아웃 뷰가 많이 달라보임 wrap content로 주면 안됨..-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--    tools:listitem="@layout/card_layout"-->
