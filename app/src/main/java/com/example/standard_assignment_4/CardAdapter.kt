@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.standard_assignment_4.databinding.CardItem1Binding
 import com.example.standard_assignment_4.databinding.CardItem2Binding
 import com.example.standard_assignment_4.databinding.CardItem3Binding
+import java.text.DecimalFormat
 
 class CardAdapter(private val dataList: MutableList<CardItem>, private val context: Context) :
     RecyclerView.Adapter<ViewHolder>() {
@@ -85,6 +86,8 @@ class CardAdapter(private val dataList: MutableList<CardItem>, private val conte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val decimal = DecimalFormat("#,###.00")
+
         holder.itemView.setOnClickListener {
             itemClick?.onClick(it, position)
         }
@@ -93,19 +96,19 @@ class CardAdapter(private val dataList: MutableList<CardItem>, private val conte
                 (holder as CardItemOneHolder).name.text = dataList[position].name
                 holder.cardNum.text = dataList[position].cardNum
                 holder.expire.text = dataList[position].expire
-                holder.price.text = dataList[position].price
+                holder.price.text = "$${decimal.format(dataList[position].price)}"
             }
             1 -> {
                 (holder as CardItemTwoHolder).name.text = dataList[position].name
                 holder.cardNum.text = dataList[position].cardNum
                 holder.expire.text = dataList[position].expire
-                holder.price.text = dataList[position].price
+                holder.price.text = "$${decimal.format(dataList[position].price)}"
             }
             2 -> {
                 (holder as CardItemThreeHolder).name.text = dataList[position].name
                 holder.cardNum.text = dataList[position].cardNum
                 holder.expire.text = dataList[position].expire
-                holder.price.text = dataList[position].price
+                holder.price.text = "$${decimal.format(dataList[position].price)}"
             }
         }
     }

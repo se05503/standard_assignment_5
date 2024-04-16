@@ -8,6 +8,6 @@ data class CardItem(
     val name: String,
     val cardNum: String,
     val expire: String,
-    val price: String,
+    val price: Double,
 //    val color: Int
 ):Parcelable
