@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    LinearLayout에다가 setOnClickListener-->
+<!--자기 마음이다!-->
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"

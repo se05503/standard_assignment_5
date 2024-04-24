@@ -19,11 +19,15 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val bundle = intent.getBundleExtra("intent") // intent에서 bundle 꺼내오기
-        cardItem = bundle?.getParcelable("bundle",CardItem::class.java) // bundle에서 data class 꺼내오기
+        // 22
+//        val bundle = intent.getBundleExtra("intent") // intent에서 bundle 꺼내오기 → 해당 코드 안써도됨
+        cardItem = intent.getParcelableExtra("bundle",CardItem::class.java) // bundle에서 data class 꺼내오기
         binding.detailTvName.text = "이름: ${cardItem?.name}"
         binding.detailTvCardNum.text="카드 번호: ${cardItem?.cardNum}"
         binding.detailTvExpire.text="유효기간: ${cardItem?.expire}"
         binding.detailTvPrice.text="가격: ${cardItem?.price}"
     }
 }
+/*
+
+ */
