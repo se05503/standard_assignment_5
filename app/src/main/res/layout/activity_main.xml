@@ -5,10 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.MainActivity">
 
-<!--    LinearLayout에다가 setOnClickListener-->
-<!--자기 마음이다!-->
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
@@ -106,13 +104,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:requiresFadingEdge="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:listitem="@layout/item_blue_card"/>
 <!--    android:layout_height="400dp" 이거에 따라 해당 레이아웃 뷰가 많이 달라보임 wrap content로 주면 안됨..-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 
