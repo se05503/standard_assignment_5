@@ -7,6 +7,7 @@ import kotlinx.android.parcel.Parcelize
 // @Parcelize 키워드 사용 시 build gradle에 추가
 @Parcelize
 data class Card(
+    val id: Long,
     val userName: String,
     val cardNumber: String,
     val cardType: String,

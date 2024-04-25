@@ -16,7 +16,6 @@ class MultiCardAdapter(private val onClick: (Card) -> Unit) :
 
     // inner로 선언 → nested class로 변경
     // item layout의 ui값 뿌려주기
-    // 수정 전
     class BlueTypeViewHolder(private val binding: ItemBlueCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(card: Card) {

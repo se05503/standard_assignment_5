@@ -5,6 +5,7 @@ import com.example.standard_assignment_4.presentation.MultiViewEnum
 fun cardList(): List<Card> {
     return listOf(
         Card(
+            id=1,
             "Anderson",
             "2423 3581 9503 2412",
             "A Debit Card",
@@ -14,6 +15,7 @@ fun cardList(): List<Card> {
             MultiViewEnum.BLUE
         ),
         Card(
+            id=2,
             "Jimmy",
             "1234 5678 1234 1111",
             "A Prepaid Card",
@@ -23,6 +25,7 @@ fun cardList(): List<Card> {
             MultiViewEnum.LIGHTBLUE
         ),
         Card(
+            id=3,
             "Hanna",
             "4443 2345 4564 1231",
             "A Credit Card",

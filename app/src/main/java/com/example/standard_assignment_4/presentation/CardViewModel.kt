@@ -2,12 +2,16 @@ package com.example.standard_assignment_4.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.standard_assignment_4.data.Card
 import com.example.standard_assignment_4.data.DataSource
 
 // Activity에서 ViewModel을 사용할 수 있게 됨
 class CardViewModel(val dataSource: DataSource):ViewModel() {
     // 데이터 처리하는 비지니스 로직
     val cardLiveData = dataSource.getCardList()
+    fun getCardForId(id:Long): Card {
+        return cardLiveData.get(id.toInt())
+    }
 }
 
 //viewModel provider factory
