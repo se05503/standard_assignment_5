@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -23,12 +24,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val cardViewModel by viewModels<CardViewModel> {
+        CardViewModelFactory()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val cardList = DataSource.getDataSource().getCardList() // 데이터 받아오기
-        multiCardAdapter.cardList = cardList // 어댑터에 정의한 빈 데이터와 연결
+//        val cardList = DataSource.getDataSource().getCardList() // 데이터 받아오기
+//        multiCardAdapter.cardList = cardList // 어댑터에 정의한 빈 데이터와 연결
+        val cardList = cardViewModel.cardLiveData
+        multiCardAdapter.cardList = cardList
 
         with(binding.recyclerView) {
             adapter = multiCardAdapter // 어댑터 연결
