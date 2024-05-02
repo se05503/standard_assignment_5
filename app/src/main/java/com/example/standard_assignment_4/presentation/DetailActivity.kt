@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.standard_assignment_4.R
 import com.example.standard_assignment_4.data.Card
 import com.example.standard_assignment_4.databinding.ActivityDetailBinding
+import com.example.standard_assignment_4.extension.extraNotNull
 
 class DetailActivity : AppCompatActivity() {
     companion object {
@@ -19,16 +20,15 @@ class DetailActivity : AppCompatActivity() {
         CardViewModelFactory()
     }
 
+    private val cardId by extraNotNull<Long>(EXTRA_CARD)
     private val binding by lazy { ActivityDetailBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val intent = intent
-        val cardId = intent.extras?.getLong(EXTRA_CARD) ?:0
         val cardItem = cardViewModel.getCardForId(cardId)
-//        val cardItem = intent.getParcelableExtra<Card>(EXTRA_CARD)
+
         binding.detailTvName.text = cardItem?.userName
         binding.detailTvPrice.text = cardItem?.balance.toString()
         binding.detailTvExpire.text = cardItem?.period

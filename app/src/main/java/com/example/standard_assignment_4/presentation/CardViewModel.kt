@@ -10,7 +10,7 @@ class CardViewModel(val dataSource: DataSource):ViewModel() {
     // 데이터 처리하는 비지니스 로직
     val cardLiveData = dataSource.getCardList()
     fun getCardForId(id:Long): Card {
-        return cardLiveData.get(id.toInt())
+        return cardLiveData[id.toInt()-1]
     }
 }
 

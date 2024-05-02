@@ -90,7 +90,7 @@ class MultiCardAdapter(private val onClick: (Card) -> Unit) :
             MultiViewEnum.BLUE.viewType -> {
                 val blueHolder = holder as BlueTypeViewHolder
                 blueHolder.bind(currentItem)
-                holder.itemView.setOnClickListener {// 질문: 여기서는 왜 blueHolder.itemView. 이런 식으로 안쓰나요?
+                holder.itemView.setOnClickListener {
                     onClick(currentItem)
                 }
             }

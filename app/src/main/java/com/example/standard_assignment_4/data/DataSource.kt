@@ -11,13 +11,14 @@ class DataSource {
             }
         }
     }
+
     fun getCardList(): List<Card> {
         return cardList()
     }
 
-    fun getCardForId(id:Long):Card {
-        cardList().let { cards ->
-            return cards.first{it.id == id}
-        }
-    }
+//    fun getCardForId(id:Long):Card {
+//        cardList().let { cards ->
+//            return cards.first{it.id == id}
+//        }
+//    }
 }
